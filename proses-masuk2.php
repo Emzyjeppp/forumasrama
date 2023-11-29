@@ -1,19 +1,19 @@
 <?php
 include 'koneksi.php';
 
-$email = isset($_POST['email']) ? $_POST['email'] : '';
+$username = isset($_POST['username']) ? $_POST['username'] : '';
 $password = isset($_POST['password']) ? $_POST['password'] : '';
 
-if (empty($email) || empty($password)) {
-    echo "<script>alert('Masukkan email dan kata sandi'); window.location.assign('index.php');</script>";
+if (empty($username) || empty($password)) {
+    echo "<script>alert('Masukkan username dan kata sandi'); window.location.assign('index.php');</script>";
     exit();
 }
 
 
-$email = mysqli_real_escape_string($koneksi, $email);
+$email = mysqli_real_escape_string($koneksi, $username);
 
 
-$sql = "SELECT * FROM masyarakat WHERE email=?";
+$sql = "SELECT * FROM petugas WHERE username=?";
 $stmt = mysqli_prepare($koneksi, $sql);
 mysqli_stmt_bind_param($stmt, "s", $email);
 mysqli_stmt_execute($stmt);
@@ -36,10 +36,10 @@ if ($result) {
                 header("Location: masyarakat.php");
                 exit();
             } else {
-                echo "<script>alert('Maaf Anda Gagal Login. Password tidak sesuai.'); window.location.assign('index.php');</script>";
+                echo "<script>alert('Maaf Anda Gagal Login. Password tidak sesuai.'); window.location.assign('index2.php');</script>";
             }
     } else {
-        echo "<script>alert('Maaf Anda Gagal Login. Email tidak ditemukan.'); window.location.assign('index.php');</script>";
+        echo "<script>alert('Maaf Anda Gagal Login. Email tidak ditemukan.'); window.location.assign('index2.php');</script>";
     }
 } else {
     // Check for SQL errors

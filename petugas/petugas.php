@@ -63,16 +63,9 @@ if (empty($_SESSION['nik'])){
       </div>
       <!-- Nav Item - Charts -->
       <li class="nav-item">
-        <a class="nav-link" href="?url=tulis">
+        <a class="nav-link" href="?url=verifikasi_laporan">
           <i class="fas fa-fw fa-edit"></i>
-          <span>Tulis Laporan</span></a>
-      </li>
-
-      <!-- Nav Item - Tables -->
-      <li class="nav-item">
-        <a class="nav-link" href="?url=lihat">
-          <i class="fas fa-fw fa-search"></i>
-          <span>Laporan Aspirasi</span></a>
+          <span>Verifikasi Laporan</span></a>
       </li>
 
     <!-- Nav Item - Tables -->
@@ -106,7 +99,7 @@ if (empty($_SESSION['nik'])){
           <button id="sidebarToggleTop" class="btn btn-link d-md-none rounded-circle mr-3">
             <i class="fa fa-bars"></i>
           </button>
-   <h1>Tulis Laporan</h1>
+   <h1>Verifikasi Laporan</h1>
           <!-- Topbar Search -->
         </nav>
         <!-- End of Topbar -->

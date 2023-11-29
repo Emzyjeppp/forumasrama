@@ -1,6 +1,26 @@
+<?php
+$id = $_GET['id'];
+echo "ID: $id"; 
+if(empty($id)){
+    header("Location:masyarakat.php");
+    exit(); 
+}
+
+include 'koneksi.php';
+$query = mysqli_query($koneksi, "SELECT * FROM pengaduan WHERE id_pengaduan='$id'");
+
+if (!$query) {
+    die(mysqli_error($koneksi)); // Menampilkan pesan kesalahan MySQL
+}
+
+$data = mysqli_fetch_array($query);
+
+?>
+
 <div class="card shadow">
 <div class="card header">
-<a href="masyarakat.php" class="btn btn-primary btc-icon-split">
+<a href="?url=detail-pengaduan" class="btn btn-primary btn-icon-split">
+
     <span class="icon text-white-5">
         <i class="fa fa-arrow-left"></i>
     </span>
@@ -10,15 +30,15 @@
 
                 <div class="form-group">
                     <label>Tanggal Aduan</label>
-                    <input type="text" name="tgl_pengaduan" class="form-control" readonly value="<?= date('Y-m-d'); ?>">
+                    <input type="text" name="tgl_pengaduan" class="form-control" readonly value="<?= $data['tgl_pengaduan'];?>">
                 </div>
                 <div class="form-group">
                     <label>Tulis Laporan</label>
-                    <textarea name="isi_laporan" class="form-control" id="" cols="30" rows="10"></textarea>
+                    <textarea name="isi_laporan" class="form-control" id="" cols="30" rows="10"><?= $data['isi_laporan']; ?></textarea>
                 </div>
                 <div class="form-group">
                     <label>Foto</label>
-                    <input type="file" required class="form-control" name="foto" accept="image/*">
+                    <img class="img-thumbnail" src="foto/<?= $data['foto']; ?>" width="300 "alt="">
                 </div>
 
                 <div class="form-group">

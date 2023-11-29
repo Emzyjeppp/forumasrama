@@ -30,11 +30,13 @@
                                 <div class="p-5">
                                     <div class="text-center">
                                         <img src="img/LaporAsrama.png" alt="Icon" width="100" height="100">
-                                        <h1 class="h4 text-gray-900 mb-4">Selamat Datang Di LaporAspirasi!</h1>
+                                        <h1 class="h4 text-gray-900 mb-4">Selamat Datang Di LaporAspirasi!
+                                                                            Admin / Petugas Only!
+                                        </h1>
                                     </div>
-                                    <form method="post" action="proses-masuk.php" class="user">
+                                    <form method="post" action="proses-masuk2.php" class="user">
                                         <div class="form-group">
-                                            <input name="email" type="email" class="form-control form-control-user" id="exampleInputEmail" aria-describedby="emailHelp" placeholder="Masukkan Email Anda...">
+                                            <input name="username" type="text" class="form-control form-control-user" id="exampleInputEmail" aria-describedby="emailHelp" placeholder="Masukkan Username Anda...">
                                         </div>
                                         <div class="form-group">
 										<input name="password" type="password" class="form-control form-control-user" id="exampleInputPassword" placeholder="Kata Sandi Anda...">
@@ -45,10 +47,7 @@
                                     </form>
                                     <hr>
                                     <div class="text-center">
-                                        <a class="small" href="register.php">Buat Akun</a>
-                                    </div>
-                                    <div class="text-center">
-                                        <a class="small" href="index2.php">Masuk Sebagai Admin / Petugas</a>
+                                        <a class="small" href="index.php">Kembali Ke Halaman Login</a>
                                     </div>
                                 </div>
                             </div>
